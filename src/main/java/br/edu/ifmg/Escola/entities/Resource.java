@@ -30,4 +30,11 @@ public class Resource {
 
     @OneToMany(mappedBy = "course")
     private List<Offer> offers = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name="offer_id")
+    private Offer resource;
+
+    @OneToMany(mappedBy = "resource")
+    private List<Section> sections = new ArrayList<>();
 }
